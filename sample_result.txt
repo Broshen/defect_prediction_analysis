@@ -1,0 +1,52 @@
+GOBNILP version 1.6.3 [GitHash: None ]
+Solving the BN structure learning problem using SCIP.
+
+SCIP version 3.2.1 [precision: 8 byte] [memory: block] [mode: optimized] [LP solver: SoPlex 2.2.1] [GitHash: c7c6c02]
+Copyright (c) 2002-2016 Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+Reading parameter file <gobnilp.set>.
+File name:              test.dat
+Problem name:           test
+presolving (3 rounds: 3 fast, 2 medium, 2 exhaustive):
+ 1 deleted vars, 1 deleted constraints, 0 added constraints, 0 tightened bounds, 0 added holes, 0 changed sides, 0 changed coefficients
+ 0 implications, 2457 cliques
+presolved problem has 631 variables (631 bin, 0 int, 0 impl, 0 cont) and 398 constraints
+
+time | Best Network Found So Far |   Best Network Possible   |  gap
+ 0.1s|       -3.752072e+03       |       -3.330116e+03       |  12.67%
+ 0.1s|       -3.699096e+03       |       -3.526053e+03       |   4.91%
+ 0.6s|       -3.672377e+03       |       -3.672377e+03       |   0.00%
+
+SCIP Status        : problem is solved [optimal solution found]
+Solving Time (sec) : 0.58
+Solving Nodes      : 1
+Primal Bound       : -3.67237718297549e+03 (4 solutions)
+Dual Bound         : -3.67237718297549e+03
+Gap                : 0.00 %
+TotalPeopleInBurst<-PeopleTotal, -246.546437
+MaximumCodeBurstLate<-TotalBurstSizeLate,NumberCodeBurstsLate, -59.500305
+NumberOfChanges<-TotalBurstSize, -8.346298
+MaxPeopleInBurst<-TotalPeopleInBurst, -256.404246
+TotalBurstSizeLate<-NumberOfChangesLate, -111.069529
+NumberCodeBurstsLate<- -326.215137
+NumberOfChangesLate<-NumberCodeBurstsLate,NumberConsecutiveChangesLate, -154.473976
+NumberOfChangesEarly<-MaximumCodeBurstEarly,NumberCodeBurstsEarly, -161.670806
+MaxChurnInBurst<-TotalChurnInBurst, -34.391415
+MaximumCodeBurstEarly<-MaximumCodeBurst, -23.013868
+NumberCodeBurstsEarly<- -322.104229
+TimeFirstBurst<-TimeLastBurst,NumberCodeBursts, -392.617983
+TotalChurnInBurst<-TimeFirstBurst, -66.865118
+ChurnTotal<-PeopleTotal, -79.531912
+MaximumCodeBurst<-NumberConsecutiveChangesLate, -97.041702
+NumberOfConsecutiveChangesEarly<-TotalBurstSizeEarly, -72.398758
+NumberConsecutiveChangesLate<-TimeMaxBurst, -125.503529
+TotalBurstSizeEarly<-NumberOfChanges,NumberOfChangesEarly, -91.318247
+TotalBurstSize<-NumberOfChangesLate,NumberOfChangesEarly, -108.154925
+TimeMaxBurst<-TimeFirstBurst, -169.358639
+NumberConsecutiveChanges<-NumberOfConsecutiveChangesEarly,NumberConsecutiveChangesLate, -49.750216
+TimeLastBurst<-NumberCodeBurstsLate, -218.592198
+NumberCodeBursts<-NumberCodeBurstsLate,NumberCodeBurstsEarly, -128.631336
+PeopleTotal<-TimeFirstBurst, -220.950119
+pre<-NumberOfDefects, -115.695197
+NumberOfDefects<-PeopleTotal, -32.231058
+BN score is -3672.377183
