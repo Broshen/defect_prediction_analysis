@@ -45,7 +45,7 @@ def format_change_burst_data(input_path, is_folder, output_folder, file_name):
 		'pre',
 		'NumberOfDefects'
 		]]
-		# discretize all columns to maximum 10 categories
+		# discretize all columns to maximum 4 categories
 		for i in df:
 			col = df[i]
 			unique = len(col.unique())
