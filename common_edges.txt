@@ -1,3 +1,5 @@
+Format:
+Edge; Number of graphs this edge appears in
 NumberConsecutiveChanges -> NumberOfChanges; 9
 PeopleTotal -> ChurnTotal; 9
 NumberCodeBursts -> MaxPeopleInBurst; 8
