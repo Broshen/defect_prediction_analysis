@@ -1,3 +1,4 @@
 gobnilp/delimiter = "whitespace"
 gobnilp/scoring/names = TRUE
 gobnilp/scoring/arities = FALSE
+gobnilp/outputfile/dot = "bn.dot"
