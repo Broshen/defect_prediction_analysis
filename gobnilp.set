@@ -1,3 +1,4 @@
+gobnilp/nbns = 10
 gobnilp/delimiter = "whitespace"
 gobnilp/scoring/names = TRUE
 gobnilp/scoring/arities = FALSE

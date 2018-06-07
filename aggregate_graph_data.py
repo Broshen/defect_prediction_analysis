@@ -24,10 +24,10 @@ def aggregate(directory):
 			if fullpath[-1] != "/":
 				fullpath+="/"
 			aggregate(fullpath)
-		elif "_BN.dot" in fullpath:
+		elif ".dot" in fullpath:
 			aggregate_file(fullpath)
 		else:
-			print("Invalid file name - must contain _BN.dot: " + fullpath)
+			print("Invalid file name - must be .dot file: " + fullpath)
 
 aggregate(GRAPH_FOLDER_PATH)
 
@@ -36,5 +36,9 @@ aggregate(GRAPH_FOLDER_PATH)
 from collections import OrderedDict
 from operator import itemgetter  
 
+print("digraph {")
+
 for item in OrderedDict(sorted(EDGE_MAP.items(), key = itemgetter(1), reverse = True)):
-	print(item.strip(), EDGE_MAP[item])
+	print(item.strip().replace(";", "[label=\""+str(EDGE_MAP[item])+"\",weight=\""+str(EDGE_MAP[item])+"\"];"))
+
+print("}")
