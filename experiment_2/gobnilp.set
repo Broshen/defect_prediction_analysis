@@ -3,3 +3,9 @@ gobnilp/delimiter = "whitespace"
 gobnilp/scoring/names = TRUE
 gobnilp/scoring/arities = FALSE
 gobnilp/outputfile/dot = "bn.dot"
+gobnilp/outputfile/scoreandtime = "scoreandtime"
+
+
+gobnilp/outputfile/solutionavg = "solutionavg"
+gobnilp/outputfile/dotavg = "dotavg"
+gobnilp/outputfile/scoreandtimeavg = "scoreandtimeavg"

@@ -17,12 +17,24 @@ INPUT_FILE_PATH = '../../change_burst_data-master/weekly/packages/gobnilp_format
 
 def generateDotFiles(file, output_folder):
 	out_name=file.replace("_incl_bugs-gobnilp_formatted.csv", "")
+	output_folder+=out_name+"/"
+
+	if not os.path.exists(output_folder):
+		os.makedirs(output_folder)
+
 	subprocess.call([GOBNILP_EXECUTABLE_PATH, "-f=dat", "-g="+GOBNILP_SETTINGS_PATH, INPUT_FILE_PATH+file])
 
-	# iterate through results and move & rename to appropriate folder
-	for bnfile in os.listdir("./"):
-		if bnfile.startswith("bn") and bnfile.endswith("dot"):
-			subprocess.call(["mv",  bnfile, output_folder+out_name+"_"+bnfile])
+	with open(output_folder+out_name+"_scores", "w+") as scorefile:
+		# iterate through results and move & rename to appropriate folder
+		for file in os.listdir("./"):
+			if file.startswith("bn") and file.endswith("dot"):
+				subprocess.call(["mv",  file, output_folder+out_name+"_"+file])
+			elif file.startswith("scoreandtime_"):
+				rank = file.replace("scoreandtime_","")
+				with open(file, "r") as f:
+					score = f.read().split()[0]
+					scorefile.write(rank+"," +score+"\n")
+				os.remove(file)
 
 
 def generateAllFiles():
