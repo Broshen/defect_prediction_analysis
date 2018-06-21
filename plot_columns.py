@@ -23,6 +23,9 @@ def draw_graphs_for_columns(file_name, file_path, output_folder):
 	
 	for colname in df.columns:
 		print("working on: " + colname)
+		if colname == "GapSize" or colname == "BurstSize":
+			continue
+
 		graph_name = output_folder+colname+"-"+file_name.replace(".csv","")
 		column = df[[colname]]
 		colcount = column[colname].value_counts().sort_index()
