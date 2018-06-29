@@ -22,19 +22,35 @@ def draw_graphs_for_columns(file_name, file_path, output_folder):
 		os.makedirs(output_folder)
 	
 	for colname in df.columns:
-		print("working on: " + colname)
 		if colname == "GapSize" or colname == "BurstSize":
 			continue
-
 		graph_name = output_folder+colname+"-"+file_name.replace(".csv","")
 		column = df[[colname]]
-		colcount = column[colname].value_counts().sort_index()
+		colcount = column[colname]
+
+		print("working on: " + colname)
 		if colname in COLUMNS_TO_HISTOGRAM: 
-			colcount.plot.hist(bins=5, logy=True).get_figure().savefig(graph_name)
+			# create the logarithmic bins up to the max value
+			maxval = colcount.max()
+			bins = [-1,0,1]
+			initial = 1
+			while initial < maxval :
+				initial *= 10
+				bins.append(initial)
+
+			# cut data into bins
+			colcount = pd.cut(colcount, bins=bins).value_counts().sort_index()
+			fig = colcount.plot.bar(rot=-45,logy=True).get_figure()
 		else:
-			colcount.plot.bar().get_figure().savefig(graph_name)
-		colcount.plot.bar().get_figure().clf()
+			colcount = colcount.value_counts().sort_index()
+			fig = colcount.plot.bar().get_figure()
+
+		fig.tight_layout()
+		fig.savefig(graph_name)
+		fig.clf()
+
 		column = None
+		fig = None
 		colcount = None
 
 def draw_graphs_from_folder(input_path, output_folder):
@@ -45,7 +61,8 @@ def draw_graphs_from_folder(input_path, output_folder):
 
 	for file_name in os.listdir(input_path):
 		full_path = input_path+file_name
-		draw_graphs_for_columns(file_name, full_path, output_folder)
+		if not os.path.isdir(full_path):
+			draw_graphs_for_columns(file_name, full_path, output_folder)
 
 
 draw_graphs_from_folder(INPUT_FOLDER, OUTPUT_FOLDER)

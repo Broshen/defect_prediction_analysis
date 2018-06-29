@@ -6,7 +6,8 @@ INPUT_FOLDER = '../change_burst_data-master/weekly/classes/'
 OUTPUT_FOLDER = "./preprocessing/aggregated/weekly/classes/"
 
 
-columns_to_keep = ['TotalPeopleInBurst',
+columns_to_keep = [
+		'TotalPeopleInBurst',
 		'MaximumCodeBurstLate',
 		'NumberOfChanges',
 		'MaxPeopleInBurst',
@@ -33,7 +34,8 @@ columns_to_keep = ['TotalPeopleInBurst',
 		'TLOC',
 		'pre',
 		'NumberOfDefects',
-		'bugs']
+		'bugs'
+		]
 
 
 def aggregate_by_version_gap_burst(folder, output_folder, version, gap_min, gap_max, burst_min, burst_max):
@@ -176,9 +178,15 @@ def aggregate_cartesian_product(folder, output_folder, version):
 # aggregate_by_version_burst(INPUT_FOLDER, OUTPUT_FOLDER, "21")
 # aggregate_by_version_burst(INPUT_FOLDER, OUTPUT_FOLDER, "30")
 # aggregate_by_version_burst(INPUT_FOLDER, OUTPUT_FOLDER, "31")
-
-aggregate_cartesian_product(INPUT_FOLDER, OUTPUT_FOLDER, "20")
-aggregate_cartesian_product(INPUT_FOLDER, OUTPUT_FOLDER, "21")
-aggregate_cartesian_product(INPUT_FOLDER, OUTPUT_FOLDER, "30")
-aggregate_cartesian_product(INPUT_FOLDER, OUTPUT_FOLDER, "31")
-
+# aggregate_cartesian_product(INPUT_FOLDER, OUTPUT_FOLDER, "20")
+# aggregate_cartesian_product(INPUT_FOLDER, OUTPUT_FOLDER, "21")
+# aggregate_cartesian_product(INPUT_FOLDER, OUTPUT_FOLDER, "30")
+# aggregate_cartesian_product(INPUT_FOLDER, OUTPUT_FOLDER, "31")
+# aggregate_by_version(INPUT_FOLDER, OUTPUT_FOLDER, "20")
+# aggregate_by_version(INPUT_FOLDER, OUTPUT_FOLDER, "21")
+# aggregate_by_version(INPUT_FOLDER, OUTPUT_FOLDER, "30")
+# aggregate_by_version(INPUT_FOLDER, OUTPUT_FOLDER, "31")
+aggregate_by_version_gap_burst(INPUT_FOLDER, OUTPUT_FOLDER, "20", 3,3,3,3)
+aggregate_by_version_gap_burst(INPUT_FOLDER, OUTPUT_FOLDER, "21", 3,3,3,3)
+aggregate_by_version_gap_burst(INPUT_FOLDER, OUTPUT_FOLDER, "30", 3,3,3,3)
+aggregate_by_version_gap_burst(INPUT_FOLDER, OUTPUT_FOLDER, "31", 3,3,3,3)

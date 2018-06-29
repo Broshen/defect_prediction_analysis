@@ -1,0 +1,53 @@
+*bugs: 0,1,>1
+*ChurnTotal: 0, 1-10, 10-100, 100-1000, 1000+
+*MaxChurnInBurst: 0, 1-10, 10-100, 100-1000, 1000+
+
+MaximumCodeBurstEarly: 0, >0
+MaximumCodeBurst: 0, >0
+MaximumCodeBurstLate: 0, >0
+
+MaxPeopleInBurst: 0, >0	*how do you have 0 people in a burst?
+
+*NumberCodeBurstsEarly: 0, 1, >1
+*NumberCodeBursts: 0, 1, >1
+*NumberCodeBurstsLate: 0,1, >1
+
+*NumberConsecutiveChanges: 0, 1, 2-10, 11+
+	- looks different between versions
+NumberConsecutiveChangesLate: 0, >0
+	- should this be the same as NumberConsecutiveChanges?
+NumberOfConsecutiveChangesEarly:
+	0,1,2, >2?
+	0,1+?
+	- should this be the same as ^?
+
+
+*NumberOfChanges, NumberOfChangesEarly: not sure how to approach this
+*NumberOfChangesLate:
+	0,1,>1?
+	0,1,2,>2?
+	- should this be the same as ^?
+
+NumberOfDefects: 0, >0
+
+PeopleTotal: 1, 2, 3+
+
+*pre:
+	0,1, >1?
+	0, >0?
+
+*TimeFirstBurst: 0, >0
+*TimeLastBurst: 0, >0
+*TimeMaxBurst: 0, >0
+	- these seem to have a small, kinda insignificant "late" portion
+	- should we account for this? or is it negligable?
+
+TLOC: 0-10, 10-100, 100+
+
+TotalBurstSizeEarly: 0, >0
+TotalBurstSize: 0, >0
+TotalBurstSizeLate: 0, >0
+
+TotalChurnInBurst: 0, 1-10, 10-100, 100-1000, 1000+
+
+TotalPeopleInBurst: 0, >0
