@@ -1,0 +1,6 @@
+gobnilp/nbns = 1
+gobnilp/delimiter = "whitespace"
+gobnilp/scoring/names = TRUE
+gobnilp/scoring/arities = FALSE
+gobnilp/outputfile/dot = "bn.dot"
+limits/time = 600

@@ -81,8 +81,10 @@ def aggregate_by_version_gap_burst(folder, output_folder, version, gap_min, gap_
 				file_df = file_df.drop([colname], axis=1)
 
 		# add in column for burst size and gap size
-		file_df['GapSize'] = gapsize
-		file_df['BurstSize'] = burstsize
+		if gap_min != gap_max:
+			file_df['GapSize'] = gapsize
+		if burst_min != burst_max:
+			file_df['BurstSize'] = burstsize
 
 		if df is None:
 			df = file_df
@@ -182,10 +184,10 @@ def aggregate_cartesian_product(folder, output_folder, version):
 # aggregate_cartesian_product(INPUT_FOLDER, OUTPUT_FOLDER, "21")
 # aggregate_cartesian_product(INPUT_FOLDER, OUTPUT_FOLDER, "30")
 # aggregate_cartesian_product(INPUT_FOLDER, OUTPUT_FOLDER, "31")
-aggregate_by_version(INPUT_FOLDER, OUTPUT_FOLDER, "20")
-aggregate_by_version(INPUT_FOLDER, OUTPUT_FOLDER, "21")
-aggregate_by_version(INPUT_FOLDER, OUTPUT_FOLDER, "30")
-aggregate_by_version(INPUT_FOLDER, OUTPUT_FOLDER, "31")
+# aggregate_by_version(INPUT_FOLDER, OUTPUT_FOLDER, "20")
+# aggregate_by_version(INPUT_FOLDER, OUTPUT_FOLDER, "21")
+# aggregate_by_version(INPUT_FOLDER, OUTPUT_FOLDER, "30")
+# aggregate_by_version(INPUT_FOLDER, OUTPUT_FOLDER, "31")
 aggregate_by_version_gap_burst(INPUT_FOLDER, OUTPUT_FOLDER, "20", 3,3,3,3)
 aggregate_by_version_gap_burst(INPUT_FOLDER, OUTPUT_FOLDER, "21", 3,3,3,3)
 aggregate_by_version_gap_burst(INPUT_FOLDER, OUTPUT_FOLDER, "30", 3,3,3,3)
