@@ -1,0 +1,35 @@
+digraph {
+NumberOfChangesLate -> ChurnTotal[label="10",weight="10"];
+NumberOfChangesEarly -> NumberOfChanges[label="10",weight="10"];
+NumberOfChangesEarly -> NumberOfChangesLate[label="10",weight="10"];
+NumberOfChangesEarly -> ChurnTotal[label="10",weight="10"];
+MaximumCodeBurstEarly -> MaxChurnInBurst[label="10",weight="10"];
+MaximumCodeBurstEarly -> bugs[label="10",weight="10"];
+TotalChurnInBurst -> MaxChurnInBurst[label="10",weight="10"];
+ChurnTotal -> TotalChurnInBurst[label="10",weight="10"];
+ChurnTotal -> bugs[label="10",weight="10"];
+NumberConsecutiveChangesLate -> NumberOfChangesLate[label="10",weight="10"];
+MaximumCodeBurstLate -> NumberOfChanges[label="9",weight="9"];
+TotalBurstSizeLate -> NumberCodeBurstsLate[label="9",weight="9"];
+NumberOfChangesLate -> NumberOfChanges[label="9",weight="9"];
+MaximumCodeBurst -> NumberCodeBursts[label="9",weight="9"];
+MaximumCodeBurstEarly -> TotalChurnInBurst[label="7",weight="7"];
+TimeFirstBurst -> MaximumCodeBurstEarly[label="7",weight="7"];
+MaximumCodeBurst -> TotalPeopleInBurst[label="7",weight="7"];
+NumberOfConsecutiveChangesEarly -> NumberOfChangesEarly[label="7",weight="7"];
+NumberOfConsecutiveChangesEarly -> ChurnTotal[label="7",weight="7"];
+NumberConsecutiveChanges -> NumberOfChangesEarly[label="7",weight="7"];
+TimeLastBurst -> MaximumCodeBurstEarly[label="7",weight="7"];
+TotalBurstSize -> NumberCodeBursts[label="7",weight="7"];
+MaximumCodeBurstEarly -> MaximumCodeBurstLate[label="6",weight="6"];
+NumberCodeBurstsEarly -> TotalBurstSizeEarly[label="6",weight="6"];
+MaximumCodeBurst -> MaxPeopleInBurst[label="6",weight="6"];
+TimeLastBurst -> TimeMaxBurst[label="6",weight="6"];
+NumberOfConsecutiveChangesEarly -> NumberConsecutiveChanges[label="6",weight="6"];
+NumberConsecutiveChangesLate -> NumberConsecutiveChanges[label="6",weight="6"];
+TotalBurstSize -> MaxPeopleInBurst[label="6",weight="6"];
+TotalBurstSize -> MaximumCodeBurst[label="6",weight="6"];
+NumberOfChangesEarly -> TotalBurstSizeLate[label="6",weight="6"];
+TimeFirstBurst -> TimeMaxBurst[label="6",weight="6"];
+NumberOfConsecutiveChangesEarly -> TimeFirstBurst[label="6",weight="6"];
+}

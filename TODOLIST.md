@@ -4,6 +4,8 @@ Week of July 6
 - combine 3-3 and ALL, see which edges appear in one or both
 - generate top 10, used "aggregated" graphs
 - investigate into presolving for scores faster, try to get optimal scores (try BDM scoring?)
+- add in README for experiment_3
+- redo experiment_1, experiment_2 with properly discretized sets?
 
 Week of June 10
 - investigate combining various datasets (e.g. all of the ECLIPSEX_BURSTX_GAPX) into a single dataset by adding additional variables that capture the differences

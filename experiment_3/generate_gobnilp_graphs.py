@@ -14,11 +14,14 @@ import sys
 GOBNILP_EXECUTABLE_PATH = "../gobnilp.spx"
 GOBNILP_SETTINGS_PATH = "./gobnilp.set"
 INPUT_FILE_PATH = '../preprocessing/discretized/weekly/classes/'
-OUTPUT_FILE_PATH = "./bn_graphs/weekly/classes/"
+OUTPUT_PATH = "./bn_graphs/weekly/classes/"
 
 def generateDotFiles(file, output_folder):
 	out_name=file.replace("_incl_bugs-gobnilp_formatted.csv", "")
-	out_file=output_folder+out_name+"_bn.dot"
+	output_folder+=out_name+"/"
+
+	if not os.path.exists(output_folder):
+		os.makedirs(output_folder)
 
 	subprocess.call([GOBNILP_EXECUTABLE_PATH, "-f=dat", "-g="+GOBNILP_SETTINGS_PATH, INPUT_FILE_PATH+file])
 
@@ -27,27 +30,35 @@ def generateDotFiles(file, output_folder):
 		for file in os.listdir("./"):
 			if file.startswith("bn") and file.endswith("dot"):
 				subprocess.call(["mv",  file, output_folder+out_name+"_"+file])
+			elif file.startswith("scoreandtime_"):
+				rank = file.replace("scoreandtime_","")
+				with open(file, "r") as f:
+					score = f.read().split()[0]
+					scorefile.write(rank+"," +score+"\n")
+				os.remove(file)
 
 
-def generateAllFiles():
-	if not os.path.exists(OUTPUT_FILE_PATH):
-		os.makedirs(OUTPUT_FILE_PATH)
+def generateAllFiles(output_folder):
+	if not os.path.exists(output_folder):
+		os.makedirs(output_folder)
 
 	for file in os.listdir(INPUT_FILE_PATH):
 		if "_incl_bugs-gobnilp_formatted.csv" in file:
-			generateDotFiles(file, OUTPUT_FILE_PATH)
+			generateDotFiles(file, output_folder)
 
-def generateFromFilesWithPrefix(prefix):
-	if not os.path.exists(OUTPUT_FILE_PATH):
-		os.makedirs(OUTPUT_FILE_PATH)
+def generateFromFilesWithPrefix(prefix, output_folder):
+	if not os.path.exists(output_folder):
+		os.makedirs(output_folder)
 
 	for file in os.listdir(INPUT_FILE_PATH):
 		if (INPUT_FILE_PATH + file).startswith(prefix):
-			generateDotFiles(file, OUTPUT_FILE_PATH)
+			generateDotFiles(file, output_folder)
 
 try:
 	print("GENERATING FROM FILES BEGINNING WITH: " + sys.argv[1])
-	generateFromFilesWithPrefix(sys.argv[1])
+	generateFromFilesWithPrefix(sys.argv[1], OUTPUT_PATH)
 except:
 	print("GENERATING FROM ALL FILES IN FOLDER" + INPUT_FILE_PATH)
-	generateAllFiles()
+	generateAllFiles(OUTPUT_PATH)
+
+# stopped at ../change_burst_data-master/weekly/packages/gobnilp_formatted/Eclipse20_GAP1_BURST10_incl_bugs-gobnilp_formatted.csv

@@ -16,5 +16,14 @@ Folders:
 /experiment_1 - generate the top 10 BNs from multiple eclipse datasets (e.g. EclipseX_GAPX_BURST_X), and try to aggregate them to find similarities/patterns between them by counting how many times an edge appears in all of the BNs.
 
 /experiment_2 - generate the top 100 BNs from a single dataset, and try to aggregate them to find similarities/patterns between them
-
 	- ensure that all suboptimal BNs have a similar score, otherwise, data may be skewed/inaccurate
+
+/experiment_3 - generate the top 10 BNs from the MERGED dataset and the OPTIMAL dataset for each version
+	1) compare the aggregated BNs between the MERGED and OPTIMAL datasets
+	2) compare the best BNs (i.e. bn_1.dot) between the MERGED and OPTIMAL datasets
+	3) compare the best BNs vs the aggregated BNs for each dataset
+
+/experiment_4 - generate the top 10 BNs taking only the variables that are ONLY dependent, or ONLY independent, based on the best BN generated in experiment_3 for each dataset, and pruning all other variables
+	1) compare the aggregated BNs between the MERGED and OPTIMAL datasets
+	2) compare the best BNs (i.e. bn_1.dot) between the MERGED and OPTIMAL datasets
+	3) compare the best BNs vs the aggregated BNs for each dataset

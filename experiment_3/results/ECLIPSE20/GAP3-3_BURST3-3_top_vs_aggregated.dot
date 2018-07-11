@@ -1,0 +1,87 @@
+digraph {
+NumberOfChangesEarly -> NumberOfChangesLate[color="red"];
+MaxPeopleInBurst -> MaximumCodeBurst[color="red"];
+NumberCodeBursts -> MaximumCodeBurst[color="red"];
+TimeMaxBurst -> TimeLastBurst[color="red"];
+NumberCodeBursts -> TimeMaxBurst[color="red"];
+TotalPeopleInBurst -> NumberCodeBursts[color="red"];
+TotalBurstSizeLate -> MaximumCodeBurstLate[color="black"];
+NumberCodeBurstsLate -> MaximumCodeBurstLate[color="black"];
+NumberCodeBurstsLate -> NumberConsecutiveChangesLate[color="black"];
+NumberOfChangesLate -> NumberOfChanges[color="black"];
+NumberOfChangesLate -> ChurnTotal[color="black"];
+NumberOfChangesLate -> pre[color="black"];
+NumberOfChangesEarly -> NumberOfChanges[color="black"];
+NumberOfChangesEarly -> ChurnTotal[color="black"];
+MaximumCodeBurstEarly -> MaxChurnInBurst[color="black"];
+MaximumCodeBurstEarly -> NumberConsecutiveChanges[color="black"];
+TimeFirstBurst -> NumberOfConsecutiveChangesEarly[color="black"];
+ChurnTotal -> TLOC[color="black"];
+NumberOfConsecutiveChangesEarly -> NumberConsecutiveChanges[color="black"];
+NumberConsecutiveChangesLate -> NumberOfChangesLate[color="black"];
+NumberConsecutiveChangesLate -> NumberConsecutiveChanges[color="black"];
+NumberConsecutiveChangesLate -> TLOC[color="black"];
+TotalBurstSizeEarly -> NumberOfChangesLate[color="black"];
+TotalBurstSizeEarly -> NumberOfChangesEarly[color="black"];
+TotalBurstSizeEarly -> pre[color="black"];
+TimeLastBurst -> NumberConsecutiveChangesLate[color="black"];
+NumberCodeBurstsLate -> MaximumCodeBurstEarly[color="black"];
+NumberCodeBurstsLate -> TimeLastBurst[color="black"];
+MaximumCodeBurstEarly -> ChurnTotal[color="black"];
+TotalChurnInBurst -> MaxChurnInBurst[color="black"];
+ChurnTotal -> TotalChurnInBurst[color="black"];
+TimeLastBurst -> TotalChurnInBurst[color="black"];
+NumberCodeBursts -> TotalBurstSize[color="black"];
+NumberCodeBurstsEarly -> NumberOfConsecutiveChangesEarly[color="black"];
+NumberOfConsecutiveChangesEarly -> NumberOfChangesEarly[color="black"];
+NumberOfConsecutiveChangesEarly -> NumberConsecutiveChangesLate[color="black"];
+MaxPeopleInBurst -> TotalBurstSize[color="black"];
+MaximumCodeBurst -> TotalBurstSize[color="black"];
+MaximumCodeBurstEarly -> NumberOfConsecutiveChangesEarly[color="black"];
+NumberCodeBurstsEarly -> TimeFirstBurst[color="black"];
+TimeFirstBurst -> MaximumCodeBurstEarly[color="black"];
+TotalBurstSizeEarly -> NumberCodeBurstsEarly[color="black"];
+TimeLastBurst -> MaximumCodeBurstEarly[color="black"];
+NumberCodeBursts -> MaxPeopleInBurst[color="black"];
+TotalPeopleInBurst -> MaxPeopleInBurst[color="blue"];
+NumberOfChanges -> pre[color="blue"];
+TotalBurstSizeLate -> NumberCodeBurstsEarly[color="blue"];
+NumberCodeBurstsLate -> TotalBurstSizeLate[color="blue"];
+NumberCodeBurstsLate -> NumberCodeBurstsEarly[color="blue"];
+NumberCodeBurstsLate -> MaximumCodeBurst[color="blue"];
+NumberCodeBurstsLate -> TimeMaxBurst[color="blue"];
+NumberOfChangesLate -> NumberOfChangesEarly[color="blue"];
+NumberCodeBurstsEarly -> MaximumCodeBurst[color="blue"];
+NumberCodeBurstsEarly -> NumberCodeBursts[color="blue"];
+MaximumCodeBurst -> TotalPeopleInBurst[color="blue"];
+MaximumCodeBurst -> MaxPeopleInBurst[color="blue"];
+MaximumCodeBurst -> NumberCodeBursts[color="blue"];
+NumberOfConsecutiveChangesEarly -> NumberOfChangesLate[color="blue"];
+TotalBurstSizeEarly -> MaximumCodeBurst[color="blue"];
+TotalBurstSizeEarly -> TimeMaxBurst[color="blue"];
+TotalBurstSizeEarly -> NumberCodeBursts[color="blue"];
+TotalBurstSize -> TimeLastBurst[color="blue"];
+TimeMaxBurst -> TimeFirstBurst[color="blue"];
+TimeLastBurst -> TimeMaxBurst[color="blue"];
+NumberCodeBursts -> TotalPeopleInBurst[color="blue"];
+NumberCodeBursts -> TimeLastBurst[color="blue"];
+
+  rankdir=LR
+  node [shape=plaintext]
+  subgraph cluster_01 { 
+    label = "Legend";
+    key [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+      <tr><td align="right" port="i1">Appears in GAP3-3_BURST3-3_aggregate_network.dot</td></tr>
+      <tr><td align="right" port="i2">Appears in GAP3-3_BURST3-3_top_network.dot</td></tr>
+      <tr><td align="right" port="i3">Appears in both graphs</td></tr>
+      </table>>]
+    key2 [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+      <tr><td port="i1">&nbsp;</td></tr>
+      <tr><td port="i2">&nbsp;</td></tr>
+      <tr><td port="i3">&nbsp;</td></tr>
+      </table>>]
+    key:i1:e -> key2:i1:w [color=red]
+    key:i2:e -> key2:i2:w [color=blue]
+    key:i3:e -> key2:i3:w [color=black]
+  }
+}

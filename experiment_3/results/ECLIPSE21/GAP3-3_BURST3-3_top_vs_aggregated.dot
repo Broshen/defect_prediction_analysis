@@ -1,0 +1,83 @@
+digraph {
+NumberConsecutiveChanges -> TotalChurnInBurst[color="red"];
+NumberCodeBursts -> TimeLastBurst[color="red"];
+TotalPeopleInBurst -> TotalBurstSize[color="red"];
+TotalBurstSizeEarly -> NumberOfConsecutiveChangesEarly[color="red"];
+MaximumCodeBurst -> TotalBurstSize[color="red"];
+NumberOfChanges -> pre[color="black"];
+NumberOfChangesLate -> NumberOfChanges[color="black"];
+NumberOfChangesEarly -> NumberOfChanges[color="black"];
+NumberOfChangesEarly -> ChurnTotal[color="black"];
+NumberOfChangesEarly -> TLOC[color="black"];
+MaximumCodeBurstEarly -> MaxChurnInBurst[color="black"];
+TotalChurnInBurst -> MaxChurnInBurst[color="black"];
+TotalChurnInBurst -> ChurnTotal[color="black"];
+ChurnTotal -> TLOC[color="black"];
+NumberOfConsecutiveChangesEarly -> NumberConsecutiveChanges[color="black"];
+NumberConsecutiveChangesLate -> NumberOfChangesLate[color="black"];
+NumberConsecutiveChanges -> pre[color="black"];
+TimeLastBurst -> MaximumCodeBurstEarly[color="black"];
+TimeLastBurst -> NumberConsecutiveChangesLate[color="black"];
+TLOC -> pre[color="black"];
+NumberCodeBurstsLate -> MaximumCodeBurstEarly[color="black"];
+NumberCodeBurstsEarly -> TotalBurstSizeEarly[color="black"];
+ChurnTotal -> NumberOfChangesLate[color="black"];
+NumberOfConsecutiveChangesEarly -> NumberConsecutiveChangesLate[color="black"];
+NumberConsecutiveChangesLate -> NumberConsecutiveChanges[color="black"];
+MaximumCodeBurstEarly -> TotalChurnInBurst[color="black"];
+MaximumCodeBurstEarly -> NumberConsecutiveChanges[color="black"];
+TimeFirstBurst -> MaximumCodeBurstEarly[color="black"];
+TimeFirstBurst -> NumberOfConsecutiveChangesEarly[color="black"];
+NumberOfConsecutiveChangesEarly -> NumberOfChangesEarly[color="black"];
+TotalBurstSizeLate -> NumberConsecutiveChangesLate[color="black"];
+TimeMaxBurst -> TimeFirstBurst[color="black"];
+TimeLastBurst -> TimeMaxBurst[color="black"];
+TotalBurstSizeLate -> NumberCodeBurstsLate[color="black"];
+NumberCodeBurstsLate -> NumberOfChangesLate[color="black"];
+MaxPeopleInBurst -> MaximumCodeBurst[color="blue"];
+NumberCodeBurstsLate -> TotalBurstSize[color="blue"];
+NumberCodeBurstsEarly -> NumberCodeBurstsLate[color="blue"];
+NumberCodeBurstsEarly -> TimeFirstBurst[color="blue"];
+NumberCodeBurstsEarly -> NumberOfConsecutiveChangesEarly[color="blue"];
+NumberCodeBurstsEarly -> TotalBurstSize[color="blue"];
+NumberCodeBurstsEarly -> NumberCodeBursts[color="blue"];
+MaximumCodeBurst -> TotalPeopleInBurst[color="blue"];
+NumberOfConsecutiveChangesEarly -> TotalChurnInBurst[color="blue"];
+TotalBurstSizeEarly -> TotalBurstSizeLate[color="blue"];
+TotalBurstSizeEarly -> NumberCodeBurstsLate[color="blue"];
+TotalBurstSizeEarly -> NumberOfChangesEarly[color="blue"];
+TotalBurstSizeEarly -> TotalBurstSize[color="blue"];
+TotalBurstSizeEarly -> NumberCodeBursts[color="blue"];
+TotalBurstSize -> TotalPeopleInBurst[color="blue"];
+TotalBurstSize -> MaxPeopleInBurst[color="blue"];
+TotalBurstSize -> MaximumCodeBurst[color="blue"];
+TotalBurstSize -> NumberCodeBursts[color="blue"];
+TimeMaxBurst -> TotalBurstSizeLate[color="blue"];
+TimeMaxBurst -> NumberCodeBurstsEarly[color="blue"];
+TimeLastBurst -> TotalBurstSizeLate[color="blue"];
+TimeLastBurst -> NumberCodeBurstsEarly[color="blue"];
+NumberCodeBursts -> TotalPeopleInBurst[color="blue"];
+NumberCodeBursts -> MaxPeopleInBurst[color="blue"];
+NumberCodeBursts -> TotalChurnInBurst[color="blue"];
+NumberCodeBursts -> MaximumCodeBurst[color="blue"];
+NumberCodeBursts -> TLOC[color="blue"];
+
+  rankdir=LR
+  node [shape=plaintext]
+  subgraph cluster_01 { 
+    label = "Legend";
+    key [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+      <tr><td align="right" port="i1">Appears in GAP3-3_BURST3-3_aggregate_network.dot</td></tr>
+      <tr><td align="right" port="i2">Appears in GAP3-3_BURST3-3_top_network.dot</td></tr>
+      <tr><td align="right" port="i3">Appears in both graphs</td></tr>
+      </table>>]
+    key2 [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+      <tr><td port="i1">&nbsp;</td></tr>
+      <tr><td port="i2">&nbsp;</td></tr>
+      <tr><td port="i3">&nbsp;</td></tr>
+      </table>>]
+    key:i1:e -> key2:i1:w [color=red]
+    key:i2:e -> key2:i2:w [color=blue]
+    key:i3:e -> key2:i3:w [color=black]
+  }
+}

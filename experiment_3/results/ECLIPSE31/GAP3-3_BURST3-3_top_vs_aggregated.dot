@@ -1,0 +1,92 @@
+digraph {
+MaximumCodeBurstLate -> NumberOfChanges[color="red"];
+TotalBurstSizeLate -> NumberCodeBurstsLate[color="red"];
+NumberOfChangesLate -> NumberOfChanges[color="red"];
+MaximumCodeBurst -> NumberCodeBursts[color="red"];
+TotalBurstSize -> NumberCodeBursts[color="red"];
+NumberOfConsecutiveChangesEarly -> NumberConsecutiveChanges[color="red"];
+NumberConsecutiveChangesLate -> NumberConsecutiveChanges[color="red"];
+TotalBurstSize -> MaxPeopleInBurst[color="red"];
+TotalBurstSize -> MaximumCodeBurst[color="red"];
+NumberOfChangesEarly -> TotalBurstSizeLate[color="red"];
+TimeFirstBurst -> TimeMaxBurst[color="red"];
+NumberOfConsecutiveChangesEarly -> TimeFirstBurst[color="red"];
+NumberOfChangesLate -> ChurnTotal[color="black"];
+NumberOfChangesEarly -> NumberOfChanges[color="black"];
+NumberOfChangesEarly -> NumberOfChangesLate[color="black"];
+NumberOfChangesEarly -> ChurnTotal[color="black"];
+MaximumCodeBurstEarly -> MaxChurnInBurst[color="black"];
+MaximumCodeBurstEarly -> bugs[color="black"];
+TotalChurnInBurst -> MaxChurnInBurst[color="black"];
+ChurnTotal -> TotalChurnInBurst[color="black"];
+ChurnTotal -> bugs[color="black"];
+NumberConsecutiveChangesLate -> NumberOfChangesLate[color="black"];
+MaximumCodeBurstEarly -> TotalChurnInBurst[color="black"];
+TimeFirstBurst -> MaximumCodeBurstEarly[color="black"];
+MaximumCodeBurst -> TotalPeopleInBurst[color="black"];
+NumberOfConsecutiveChangesEarly -> NumberOfChangesEarly[color="black"];
+NumberOfConsecutiveChangesEarly -> ChurnTotal[color="black"];
+NumberConsecutiveChanges -> NumberOfChangesEarly[color="black"];
+TimeLastBurst -> MaximumCodeBurstEarly[color="black"];
+MaximumCodeBurstEarly -> MaximumCodeBurstLate[color="black"];
+NumberCodeBurstsEarly -> TotalBurstSizeEarly[color="black"];
+MaximumCodeBurst -> MaxPeopleInBurst[color="black"];
+TimeLastBurst -> TimeMaxBurst[color="black"];
+TotalPeopleInBurst -> TotalBurstSize[color="blue"];
+MaximumCodeBurstLate -> MaxPeopleInBurst[color="blue"];
+MaximumCodeBurstLate -> TotalBurstSizeLate[color="blue"];
+NumberOfChanges -> NumberOfChangesLate[color="blue"];
+MaxPeopleInBurst -> TotalPeopleInBurst[color="blue"];
+TotalBurstSizeLate -> MaximumCodeBurst[color="blue"];
+TotalBurstSizeLate -> NumberConsecutiveChangesLate[color="blue"];
+TotalBurstSizeLate -> NumberCodeBursts[color="blue"];
+NumberCodeBurstsLate -> MaximumCodeBurstLate[color="blue"];
+NumberCodeBurstsLate -> TotalBurstSizeLate[color="blue"];
+NumberCodeBurstsLate -> MaxChurnInBurst[color="blue"];
+NumberCodeBurstsLate -> NumberCodeBurstsEarly[color="blue"];
+NumberCodeBurstsLate -> MaximumCodeBurst[color="blue"];
+NumberCodeBurstsLate -> NumberCodeBursts[color="blue"];
+MaximumCodeBurstEarly -> NumberCodeBurstsLate[color="blue"];
+MaximumCodeBurstEarly -> NumberConsecutiveChanges[color="blue"];
+TimeFirstBurst -> NumberCodeBurstsLate[color="blue"];
+TimeFirstBurst -> NumberOfConsecutiveChangesEarly[color="blue"];
+TimeFirstBurst -> NumberConsecutiveChanges[color="blue"];
+MaximumCodeBurst -> NumberCodeBurstsEarly[color="blue"];
+MaximumCodeBurst -> TotalBurstSizeEarly[color="blue"];
+MaximumCodeBurst -> TotalBurstSize[color="blue"];
+NumberOfConsecutiveChangesEarly -> NumberCodeBurstsEarly[color="blue"];
+NumberConsecutiveChangesLate -> NumberOfChanges[color="blue"];
+NumberConsecutiveChangesLate -> NumberOfConsecutiveChangesEarly[color="blue"];
+TotalBurstSize -> bugs[color="blue"];
+TimeMaxBurst -> TimeFirstBurst[color="blue"];
+NumberConsecutiveChanges -> NumberOfConsecutiveChangesEarly[color="blue"];
+NumberConsecutiveChanges -> NumberConsecutiveChangesLate[color="blue"];
+TimeLastBurst -> NumberCodeBurstsLate[color="blue"];
+TimeLastBurst -> NumberConsecutiveChangesLate[color="blue"];
+TimeLastBurst -> NumberCodeBursts[color="blue"];
+NumberCodeBursts -> TotalPeopleInBurst[color="blue"];
+NumberCodeBursts -> MaxPeopleInBurst[color="blue"];
+NumberCodeBursts -> TotalChurnInBurst[color="blue"];
+NumberCodeBursts -> MaximumCodeBurst[color="blue"];
+NumberCodeBursts -> TotalBurstSizeEarly[color="blue"];
+NumberCodeBursts -> TotalBurstSize[color="blue"];
+
+  rankdir=LR
+  node [shape=plaintext]
+  subgraph cluster_01 { 
+    label = "Legend";
+    key [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+      <tr><td align="right" port="i1">Appears in GAP3-3_BURST3-3_aggregate_network.dot</td></tr>
+      <tr><td align="right" port="i2">Appears in GAP3-3_BURST3-3_top_network.dot</td></tr>
+      <tr><td align="right" port="i3">Appears in both graphs</td></tr>
+      </table>>]
+    key2 [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+      <tr><td port="i1">&nbsp;</td></tr>
+      <tr><td port="i2">&nbsp;</td></tr>
+      <tr><td port="i3">&nbsp;</td></tr>
+      </table>>]
+    key:i1:e -> key2:i1:w [color=red]
+    key:i2:e -> key2:i2:w [color=blue]
+    key:i3:e -> key2:i3:w [color=black]
+  }
+}
