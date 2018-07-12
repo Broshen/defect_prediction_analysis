@@ -1,0 +1,8 @@
+digraph {
+NumberCodeBurstsLate -> TotalBurstSizeEarly[label="10",weight="10"];
+MaxChurnInBurst -> TotalBurstSizeEarly[label="10",weight="10"];
+pre -> TotalBurstSizeEarly[label="10",weight="10"];
+MaxChurnInBurst -> pre[label="7",weight="7"];
+TLOC -> pre[label="6",weight="6"];
+MaxChurnInBurst -> NumberCodeBurstsLate[label="6",weight="6"];
+}

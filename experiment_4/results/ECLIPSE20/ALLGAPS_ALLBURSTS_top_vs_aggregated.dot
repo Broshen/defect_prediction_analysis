@@ -1,0 +1,44 @@
+digraph {
+TotalPeopleInBurst -> MaximumCodeBurst[color="red"];
+NumberOfChangesLate -> MaximumCodeBurstLate[color="black"];
+NumberOfChangesLate -> TimeLastBurst[color="black"];
+NumberOfChangesLate -> TimeFirstBurst[color="black"];
+NumberOfChangesLate -> MaxChurnInBurst[color="black"];
+NumberOfChangesLate -> pre[color="black"];
+NumberOfChangesLate -> TLOC[color="black"];
+GapSize -> MaximumCodeBurstLate[color="black"];
+GapSize -> TimeLastBurst[color="black"];
+MaximumCodeBurstLate -> TimeFirstBurst[color="black"];
+TimeLastBurst -> TimeFirstBurst[color="black"];
+TimeLastBurst -> MaxChurnInBurst[color="black"];
+TimeLastBurst -> MaximumCodeBurst[color="black"];
+TimeLastBurst -> TotalPeopleInBurst[color="black"];
+TimeFirstBurst -> MaxChurnInBurst[color="black"];
+TimeFirstBurst -> pre[color="black"];
+MaxChurnInBurst -> pre[color="black"];
+MaxChurnInBurst -> TLOC[color="black"];
+pre -> TLOC[color="black"];
+MaximumCodeBurstLate -> TotalPeopleInBurst[color="black"];
+MaximumCodeBurstLate -> MaximumCodeBurst[color="black"];
+MaximumCodeBurstLate -> TimeLastBurst[color="blue"];
+MaximumCodeBurst -> TotalPeopleInBurst[color="blue"];
+
+  rankdir=LR
+  node [shape=plaintext]
+  subgraph cluster_01 { 
+    label = "Legend";
+    key [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+      <tr><td align="right" port="i1">Appears in ALLGAPS_ALLBURSTS_aggregate_network.dot</td></tr>
+      <tr><td align="right" port="i2">Appears in ALLGAPS_ALLBURSTS_top_network.dot</td></tr>
+      <tr><td align="right" port="i3">Appears in both graphs</td></tr>
+      </table>>]
+    key2 [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+      <tr><td port="i1">&nbsp;</td></tr>
+      <tr><td port="i2">&nbsp;</td></tr>
+      <tr><td port="i3">&nbsp;</td></tr>
+      </table>>]
+    key:i1:e -> key2:i1:w [color=red]
+    key:i2:e -> key2:i2:w [color=blue]
+    key:i3:e -> key2:i3:w [color=black]
+  }
+}

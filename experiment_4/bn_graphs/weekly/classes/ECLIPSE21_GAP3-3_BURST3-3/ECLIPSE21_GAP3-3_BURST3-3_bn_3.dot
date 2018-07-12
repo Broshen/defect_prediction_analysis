@@ -1,0 +1,12 @@
+digraph {
+   TimeLastBurst;
+   MaximumCodeBurstLate;
+   PeopleTotal;
+   NumberOfDefects;
+   TotalPeopleInBurst;
+   pre;
+   MaxChurnInBurst;
+   TotalPeopleInBurst -> TimeLastBurst;
+   pre -> MaxChurnInBurst;
+   MaxChurnInBurst -> TotalPeopleInBurst;
+}

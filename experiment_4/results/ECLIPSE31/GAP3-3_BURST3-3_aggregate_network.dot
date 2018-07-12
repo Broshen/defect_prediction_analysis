@@ -1,0 +1,3 @@
+digraph {
+MaxChurnInBurst -> bugs[label="8",weight="8"];
+}

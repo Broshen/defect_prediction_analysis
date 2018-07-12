@@ -1,0 +1,16 @@
+digraph {
+   NumberCodeBurstsLate;
+   PeopleTotal;
+   NumberOfDefects;
+   TotalBurstSizeEarly;
+   TLOC;
+   MaxChurnInBurst;
+   pre;
+   NumberCodeBurstsLate -> TotalBurstSizeEarly;
+   NumberCodeBurstsLate -> MaxChurnInBurst;
+   TLOC -> pre;
+   MaxChurnInBurst -> TotalBurstSizeEarly;
+   MaxChurnInBurst -> TLOC;
+   MaxChurnInBurst -> pre;
+   pre -> TotalBurstSizeEarly;
+}

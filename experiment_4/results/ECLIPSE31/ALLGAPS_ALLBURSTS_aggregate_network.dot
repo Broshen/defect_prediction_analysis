@@ -1,0 +1,12 @@
+digraph {
+TimeMaxBurst -> MaxPeopleInBurst[label="10",weight="10"];
+NumberConsecutiveChangesLate -> MaxPeopleInBurst[label="9",weight="9"];
+TotalBurstSizeLate -> MaxPeopleInBurst[label="9",weight="9"];
+NumberConsecutiveChangesLate -> MaximumCodeBurstLate[label="8",weight="8"];
+TimeMaxBurst -> bugs[label="8",weight="8"];
+TotalBurstSizeLate -> MaximumCodeBurstLate[label="8",weight="8"];
+TimeMaxBurst -> MaximumCodeBurstLate[label="8",weight="8"];
+NumberConsecutiveChangesLate -> bugs[label="7",weight="7"];
+TimeMaxBurst -> NumberConsecutiveChangesLate[label="7",weight="7"];
+TotalBurstSizeLate -> bugs[label="6",weight="6"];
+}

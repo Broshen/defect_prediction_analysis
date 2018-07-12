@@ -1,0 +1,3 @@
+digraph {
+MaxChurnInBurst -> pre[label="6",weight="6"];
+}

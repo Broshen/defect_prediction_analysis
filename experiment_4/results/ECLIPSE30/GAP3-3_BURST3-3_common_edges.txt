@@ -1,0 +1,18 @@
+Format:
+Edge; Number of graphs this edge appears in
+NumberOfChangesEarly -> NumberOfChanges; 10
+TotalPeopleInBurst -> NumberOfChangesEarly; 10
+TotalPeopleInBurst -> NumberOfChanges; 10
+TLOC -> NumberOfChangesEarly; 10
+pre -> NumberOfChangesEarly; 10
+pre -> NumberOfChanges; 10
+TotalPeopleInBurst -> MaximumCodeBurstLate; 8
+MaxChurnInBurst -> TLOC; 7
+MaxChurnInBurst -> pre; 7
+MaxChurnInBurst -> TotalPeopleInBurst; 6
+pre -> TLOC; 5
+TLOC -> pre; 5
+TotalPeopleInBurst -> MaxChurnInBurst; 4
+pre -> MaxChurnInBurst; 3
+TLOC -> MaxChurnInBurst; 3
+MaximumCodeBurstLate -> TotalPeopleInBurst; 2

@@ -1,0 +1,25 @@
+digraph {
+   NumberOfChangesEarly;
+   PeopleTotal;
+   NumberOfDefects;
+   pre;
+   TotalPeopleInBurst;
+   MaxChurnInBurst;
+   TimeLastBurst;
+   MaximumCodeBurstLate;
+   TotalBurstSizeLate;
+   NumberOfChangesEarly -> pre;
+   NumberOfChangesEarly -> MaxChurnInBurst;
+   NumberOfChangesEarly -> TimeLastBurst;
+   NumberOfChangesEarly -> MaximumCodeBurstLate;
+   NumberOfChangesEarly -> TotalBurstSizeLate;
+   pre -> MaxChurnInBurst;
+   pre -> TimeLastBurst;
+   pre -> MaximumCodeBurstLate;
+   pre -> TotalBurstSizeLate;
+   MaxChurnInBurst -> TotalPeopleInBurst;
+   TimeLastBurst -> TotalPeopleInBurst;
+   TimeLastBurst -> MaxChurnInBurst;
+   MaximumCodeBurstLate -> TotalBurstSizeLate;
+   TotalBurstSizeLate -> TimeLastBurst;
+}

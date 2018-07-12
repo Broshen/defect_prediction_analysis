@@ -1,0 +1,23 @@
+digraph {
+NumberOfChangesLate -> MaximumCodeBurstLate[label="10",weight="10"];
+NumberOfChangesLate -> TimeLastBurst[label="10",weight="10"];
+NumberOfChangesLate -> TimeFirstBurst[label="10",weight="10"];
+NumberOfChangesLate -> MaxChurnInBurst[label="10",weight="10"];
+NumberOfChangesLate -> pre[label="10",weight="10"];
+NumberOfChangesLate -> TLOC[label="10",weight="10"];
+GapSize -> MaximumCodeBurstLate[label="10",weight="10"];
+GapSize -> TimeLastBurst[label="10",weight="10"];
+MaximumCodeBurstLate -> TimeFirstBurst[label="10",weight="10"];
+TimeLastBurst -> TimeFirstBurst[label="10",weight="10"];
+TimeLastBurst -> MaxChurnInBurst[label="10",weight="10"];
+TimeLastBurst -> MaximumCodeBurst[label="10",weight="10"];
+TimeLastBurst -> TotalPeopleInBurst[label="10",weight="10"];
+TimeFirstBurst -> MaxChurnInBurst[label="10",weight="10"];
+TimeFirstBurst -> pre[label="10",weight="10"];
+MaxChurnInBurst -> pre[label="10",weight="10"];
+MaxChurnInBurst -> TLOC[label="10",weight="10"];
+pre -> TLOC[label="10",weight="10"];
+MaximumCodeBurstLate -> TotalPeopleInBurst[label="8",weight="8"];
+MaximumCodeBurstLate -> MaximumCodeBurst[label="6",weight="6"];
+TotalPeopleInBurst -> MaximumCodeBurst[label="6",weight="6"];
+}

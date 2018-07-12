@@ -1,0 +1,29 @@
+digraph {
+   NumberConsecutiveChangesLate;
+   PeopleTotal;
+   NumberOfDefects;
+   pre;
+   GapSize;
+   MaximumCodeBurstLate;
+   TimeFirstBurst;
+   TimeLastBurst;
+   NumberCodeBursts;
+   NumberOfChanges;
+   NumberConsecutiveChangesLate -> pre;
+   NumberConsecutiveChangesLate -> MaximumCodeBurstLate;
+   NumberConsecutiveChangesLate -> TimeFirstBurst;
+   NumberConsecutiveChangesLate -> TimeLastBurst;
+   NumberConsecutiveChangesLate -> NumberCodeBursts;
+   pre -> NumberCodeBursts;
+   GapSize -> NumberConsecutiveChangesLate;
+   GapSize -> MaximumCodeBurstLate;
+   GapSize -> TimeLastBurst;
+   TimeLastBurst -> pre;
+   TimeLastBurst -> MaximumCodeBurstLate;
+   TimeLastBurst -> TimeFirstBurst;
+   TimeLastBurst -> NumberCodeBursts;
+   NumberOfChanges -> NumberConsecutiveChangesLate;
+   NumberOfChanges -> pre;
+   NumberOfChanges -> TimeFirstBurst;
+   NumberOfChanges -> TimeLastBurst;
+}

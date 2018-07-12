@@ -1,0 +1,47 @@
+digraph {
+NumberOfChangesLate -> MaximumCodeBurstLate[label="10",weight="10", color="red"];
+NumberOfChangesLate -> TimeLastBurst[label="10",weight="10", color="red"];
+NumberOfChangesLate -> TimeFirstBurst[label="10",weight="10", color="red"];
+NumberOfChangesLate -> MaxChurnInBurst[label="10",weight="10", color="red"];
+NumberOfChangesLate -> pre[label="10",weight="10", color="red"];
+NumberOfChangesLate -> TLOC[label="10",weight="10", color="red"];
+GapSize -> MaximumCodeBurstLate[label="10",weight="10", color="red"];
+GapSize -> TimeLastBurst[label="10",weight="10", color="red"];
+MaximumCodeBurstLate -> TimeFirstBurst[label="10",weight="10", color="red"];
+TimeLastBurst -> TimeFirstBurst[label="10",weight="10", color="red"];
+TimeLastBurst -> MaxChurnInBurst[label="10",weight="10", color="red"];
+TimeLastBurst -> MaximumCodeBurst[label="10",weight="10", color="red"];
+TimeLastBurst -> TotalPeopleInBurst[label="10",weight="10", color="red"];
+TimeFirstBurst -> MaxChurnInBurst[label="10",weight="10", color="red"];
+TimeFirstBurst -> pre[label="10",weight="10", color="red"];
+MaxChurnInBurst -> TLOC[label="10",weight="10", color="red"];
+pre -> TLOC[label="10",weight="10", color="red"];
+MaximumCodeBurstLate -> TotalPeopleInBurst[label="8",weight="8", color="red"];
+MaximumCodeBurstLate -> MaximumCodeBurst[label="6",weight="6", color="red"];
+TotalPeopleInBurst -> MaximumCodeBurst[label="6",weight="6", color="red"];
+MaxChurnInBurst -> pre[label="3",weight="3", color="red"];
+TLOC -> pre[label="-6",weight="-6", color="blue"];
+MaxChurnInBurst -> NumberCodeBurstsLate[label="-6",weight="-6", color="blue"];
+NumberCodeBurstsLate -> TotalBurstSizeEarly[label="-10",weight="-10", color="blue"];
+MaxChurnInBurst -> TotalBurstSizeEarly[label="-10",weight="-10", color="blue"];
+pre -> TotalBurstSizeEarly[label="-10",weight="-10", color="blue"];
+
+  rankdir=LR
+  node [shape=plaintext]
+  subgraph cluster_01 { 
+    label = "Legend";
+    key [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+      <tr><td align="right" port="i1">Appears more frequently in ALLGAPS_ALLBURSTS_aggregate_network.dot</td></tr>
+      <tr><td align="right" port="i2">Appears more frequently in GAP3-3_BURST3-3_aggregate_network.dot</td></tr>
+      <tr><td align="right" port="i3">Appears in both graphs</td></tr>
+      </table>>]
+    key2 [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+      <tr><td port="i1">&nbsp;</td></tr>
+      <tr><td port="i2">&nbsp;</td></tr>
+      <tr><td port="i3">&nbsp;</td></tr>
+      </table>>]
+    key:i1:e -> key2:i1:w [color=red]
+    key:i2:e -> key2:i2:w [color=blue]
+    key:i3:e -> key2:i3:w [color=black]
+  }
+}

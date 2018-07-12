@@ -1,0 +1,11 @@
+Format:
+Edge; Number of graphs this edge appears in
+MaxChurnInBurst -> pre; 6
+TotalPeopleInBurst -> MaxChurnInBurst; 5
+MaxChurnInBurst -> TotalPeopleInBurst; 5
+TotalPeopleInBurst -> TimeLastBurst; 4
+pre -> MaxChurnInBurst; 4
+MaxChurnInBurst -> TimeLastBurst; 3
+TimeLastBurst -> TotalPeopleInBurst; 2
+TotalPeopleInBurst -> pre; 2
+TimeLastBurst -> MaxChurnInBurst; 1

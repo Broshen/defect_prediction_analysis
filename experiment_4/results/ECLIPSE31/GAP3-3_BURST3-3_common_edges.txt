@@ -1,0 +1,10 @@
+Format:
+Edge; Number of graphs this edge appears in
+MaxChurnInBurst -> bugs; 8
+MaxChurnInBurst -> TimeLastBurst; 5
+TotalBurstSizeEarly -> TimeLastBurst; 5
+TimeLastBurst -> MaxChurnInBurst; 5
+TimeLastBurst -> TotalBurstSizeEarly; 5
+MaxChurnInBurst -> TotalBurstSizeEarly; 5
+TotalBurstSizeEarly -> MaxChurnInBurst; 3
+bugs -> MaxChurnInBurst; 2

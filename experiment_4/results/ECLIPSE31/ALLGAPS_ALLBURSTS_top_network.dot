@@ -1,0 +1,21 @@
+digraph {
+   NumberConsecutiveChangesLate;
+   PeopleTotal;
+   bugs;
+   MaximumCodeBurstLate;
+   TotalBurstSizeLate;
+   MaxPeopleInBurst;
+   TimeMaxBurst;
+   NumberConsecutiveChangesLate -> bugs;
+   NumberConsecutiveChangesLate -> MaximumCodeBurstLate;
+   NumberConsecutiveChangesLate -> TotalBurstSizeLate;
+   NumberConsecutiveChangesLate -> MaxPeopleInBurst;
+   NumberConsecutiveChangesLate -> TimeMaxBurst;
+   MaximumCodeBurstLate -> TotalBurstSizeLate;
+   MaximumCodeBurstLate -> TimeMaxBurst;
+   TotalBurstSizeLate -> bugs;
+   TotalBurstSizeLate -> MaxPeopleInBurst;
+   TotalBurstSizeLate -> TimeMaxBurst;
+   TimeMaxBurst -> bugs;
+   TimeMaxBurst -> MaxPeopleInBurst;
+}

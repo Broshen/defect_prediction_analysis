@@ -1,0 +1,11 @@
+digraph {
+   TimeLastBurst;
+   PeopleTotal;
+   bugs;
+   MaxChurnInBurst;
+   TotalBurstSizeEarly;
+   MaxChurnInBurst -> TimeLastBurst;
+   MaxChurnInBurst -> bugs;
+   MaxChurnInBurst -> TotalBurstSizeEarly;
+   TotalBurstSizeEarly -> TimeLastBurst;
+}

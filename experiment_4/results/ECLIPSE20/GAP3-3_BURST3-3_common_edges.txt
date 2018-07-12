@@ -1,0 +1,15 @@
+Format:
+Edge; Number of graphs this edge appears in
+NumberCodeBurstsLate -> TotalBurstSizeEarly; 10
+MaxChurnInBurst -> TotalBurstSizeEarly; 10
+pre -> TotalBurstSizeEarly; 10
+MaxChurnInBurst -> pre; 7
+TLOC -> pre; 6
+MaxChurnInBurst -> NumberCodeBurstsLate; 6
+MaxChurnInBurst -> TLOC; 5
+TLOC -> MaxChurnInBurst; 5
+NumberCodeBurstsLate -> MaxChurnInBurst; 4
+pre -> TLOC; 4
+pre -> MaxChurnInBurst; 3
+NumberCodeBurstsLate -> TLOC; 1
+TLOC -> NumberCodeBurstsLate; 1

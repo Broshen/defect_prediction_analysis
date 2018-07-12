@@ -1,0 +1,25 @@
+Format:
+Edge; Number of graphs this edge appears in
+TimeMaxBurst -> MaxPeopleInBurst; 10
+NumberConsecutiveChangesLate -> MaxPeopleInBurst; 9
+TotalBurstSizeLate -> MaxPeopleInBurst; 9
+NumberConsecutiveChangesLate -> MaximumCodeBurstLate; 8
+TimeMaxBurst -> bugs; 8
+TotalBurstSizeLate -> MaximumCodeBurstLate; 8
+TimeMaxBurst -> MaximumCodeBurstLate; 8
+NumberConsecutiveChangesLate -> bugs; 7
+TimeMaxBurst -> NumberConsecutiveChangesLate; 7
+TotalBurstSizeLate -> bugs; 6
+NumberConsecutiveChangesLate -> TotalBurstSizeLate; 5
+TotalBurstSizeLate -> TimeMaxBurst; 5
+TimeMaxBurst -> TotalBurstSizeLate; 5
+TotalBurstSizeLate -> NumberConsecutiveChangesLate; 5
+bugs -> TotalBurstSizeLate; 4
+NumberConsecutiveChangesLate -> TimeMaxBurst; 3
+bugs -> NumberConsecutiveChangesLate; 3
+MaximumCodeBurstLate -> TotalBurstSizeLate; 2
+MaximumCodeBurstLate -> TimeMaxBurst; 2
+MaximumCodeBurstLate -> NumberConsecutiveChangesLate; 2
+bugs -> TimeMaxBurst; 2
+MaxPeopleInBurst -> NumberConsecutiveChangesLate; 1
+MaxPeopleInBurst -> TotalBurstSizeLate; 1
