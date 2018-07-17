@@ -1,10 +1,14 @@
 Format:
 Edge; Number of graphs this edge appears in
-MaxChurnInBurst -> bugs; 8
-MaxChurnInBurst -> TimeLastBurst; 5
-TotalBurstSizeEarly -> TimeLastBurst; 5
-TimeLastBurst -> MaxChurnInBurst; 5
-TimeLastBurst -> TotalBurstSizeEarly; 5
-MaxChurnInBurst -> TotalBurstSizeEarly; 5
-TotalBurstSizeEarly -> MaxChurnInBurst; 3
-bugs -> MaxChurnInBurst; 2
+bugs -> NumberOfChanges; 10
+TimeMaxBurst -> NumberOfChanges; 10
+MaximumCodeBurstEarly -> bugs; 7
+MaxChurnInBurst -> bugs; 7
+MaximumCodeBurstEarly -> TimeMaxBurst; 7
+MaxChurnInBurst -> TimeMaxBurst; 7
+MaximumCodeBurstEarly -> MaxChurnInBurst; 5
+MaxChurnInBurst -> MaximumCodeBurstEarly; 5
+TimeMaxBurst -> MaximumCodeBurstEarly; 3
+TimeMaxBurst -> MaxChurnInBurst; 3
+bugs -> MaximumCodeBurstEarly; 3
+bugs -> MaxChurnInBurst; 3

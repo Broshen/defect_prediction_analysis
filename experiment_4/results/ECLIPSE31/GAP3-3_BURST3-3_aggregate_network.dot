@@ -1,3 +1,8 @@
 digraph {
-MaxChurnInBurst -> bugs[label="8",weight="8"];
+bugs -> NumberOfChanges[label="10",weight="10"];
+TimeMaxBurst -> NumberOfChanges[label="10",weight="10"];
+MaximumCodeBurstEarly -> bugs[label="7",weight="7"];
+MaxChurnInBurst -> bugs[label="7",weight="7"];
+MaximumCodeBurstEarly -> TimeMaxBurst[label="7",weight="7"];
+MaxChurnInBurst -> TimeMaxBurst[label="7",weight="7"];
 }

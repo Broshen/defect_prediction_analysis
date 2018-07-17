@@ -1,16 +1,23 @@
 digraph {
-MaxChurnInBurst -> pre[color="red"];
-NumberOfChangesEarly -> NumberOfChanges[color="black"];
-TotalPeopleInBurst -> NumberOfChangesEarly[color="black"];
-TotalPeopleInBurst -> NumberOfChanges[color="black"];
-TLOC -> NumberOfChangesEarly[color="black"];
-pre -> NumberOfChangesEarly[color="black"];
-pre -> NumberOfChanges[color="black"];
-TotalPeopleInBurst -> MaximumCodeBurstLate[color="black"];
-MaxChurnInBurst -> TLOC[color="black"];
-MaxChurnInBurst -> TotalPeopleInBurst[color="black"];
-pre -> MaxChurnInBurst[color="blue"];
-pre -> TLOC[color="blue"];
+TotalPeopleInBurst -> MaximumCodeBurstLate[color="red"];
+TotalBurstSizeEarly -> MaximumCodeBurstLate[color="red"];
+NumberConsecutiveChanges -> TotalBurstSizeEarly[color="red"];
+NumberConsecutiveChanges -> MaxChurnInBurst[color="red"];
+PeopleTotal -> TotalBurstSizeEarly[color="red"];
+TotalPeopleInBurst -> TotalBurstSizeEarly[color="red"];
+NumberConsecutiveChanges -> TotalPeopleInBurst[color="red"];
+TotalBurstSizeEarly -> NumberOfDefects[color="black"];
+TotalBurstSizeEarly -> MaxChurnInBurst[color="black"];
+NumberConsecutiveChanges -> NumberOfDefects[color="black"];
+TotalPeopleInBurst -> MaxChurnInBurst[color="black"];
+NumberConsecutiveChanges -> NumberOfChanges[color="black"];
+NumberConsecutiveChanges -> PeopleTotal[color="black"];
+TotalBurstSizeEarly -> TotalPeopleInBurst[color="blue"];
+TotalBurstSizeEarly -> NumberConsecutiveChanges[color="blue"];
+TotalBurstSizeEarly -> PeopleTotal[color="blue"];
+MaxChurnInBurst -> NumberConsecutiveChanges[color="blue"];
+MaximumCodeBurstLate -> TotalPeopleInBurst[color="blue"];
+PeopleTotal -> NumberOfChanges[color="blue"];
 
   rankdir=LR
   node [shape=plaintext]

@@ -1,8 +1,13 @@
 digraph {
+MaximumCodeBurstEarly -> TimeMaxBurst[color="red"];
+MaxChurnInBurst -> TimeMaxBurst[color="red"];
+bugs -> NumberOfChanges[color="black"];
+TimeMaxBurst -> NumberOfChanges[color="black"];
+MaximumCodeBurstEarly -> bugs[color="black"];
 MaxChurnInBurst -> bugs[color="black"];
-MaxChurnInBurst -> TimeLastBurst[color="blue"];
-TotalBurstSizeEarly -> TimeLastBurst[color="blue"];
-TotalBurstSizeEarly -> MaxChurnInBurst[color="blue"];
+MaximumCodeBurstEarly -> MaxChurnInBurst[color="blue"];
+TimeMaxBurst -> MaximumCodeBurstEarly[color="blue"];
+TimeMaxBurst -> MaxChurnInBurst[color="blue"];
 
   rankdir=LR
   node [shape=plaintext]

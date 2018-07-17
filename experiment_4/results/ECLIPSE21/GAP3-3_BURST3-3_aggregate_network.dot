@@ -1,3 +1,8 @@
 digraph {
-MaxChurnInBurst -> pre[label="6",weight="6"];
+MaximumCodeBurst -> PeopleTotal[label="10",weight="10"];
+MaxChurnInBurst -> MaximumCodeBurst[label="8",weight="8"];
+TimeMaxBurst -> NumberOfChangesLate[label="7",weight="7"];
+NumberOfChangesLate -> PeopleTotal[label="6",weight="6"];
+MaximumCodeBurst -> NumberOfDefects[label="6",weight="6"];
+PeopleTotal -> NumberOfDefects[label="6",weight="6"];
 }

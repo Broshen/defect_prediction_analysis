@@ -1,12 +1,27 @@
 digraph {
-MaxChurnInBurst -> NumberCodeBurstsLate[color="red"];
-NumberCodeBurstsLate -> TotalBurstSizeEarly[color="black"];
-MaxChurnInBurst -> TotalBurstSizeEarly[color="black"];
-pre -> TotalBurstSizeEarly[color="black"];
-MaxChurnInBurst -> pre[color="black"];
-TLOC -> pre[color="black"];
-NumberCodeBurstsLate -> MaxChurnInBurst[color="blue"];
-MaxChurnInBurst -> TLOC[color="blue"];
+MaxChurnInBurst -> MaximumCodeBurstEarly[color="red"];
+TotalPeopleInBurst -> pre[color="red"];
+MaximumCodeBurstLate -> TotalPeopleInBurst[color="red"];
+NumberOfDefects -> NumberOfChanges[color="black"];
+NumberOfDefects -> pre[color="black"];
+NumberOfChanges -> PeopleTotal[color="black"];
+MaximumCodeBurstEarly -> NumberCodeBurstsEarly[color="black"];
+MaximumCodeBurstEarly -> pre[color="black"];
+MaximumCodeBurstEarly -> PeopleTotal[color="black"];
+pre -> NumberOfChanges[color="black"];
+MaximumCodeBurstLate -> NumberCodeBursts[color="black"];
+PeopleTotal -> NumberCodeBurstsEarly[color="black"];
+TotalPeopleInBurst -> NumberOfChanges[color="black"];
+TotalPeopleInBurst -> NumberCodeBurstsEarly[color="black"];
+NumberCodeBursts -> PeopleTotal[color="black"];
+MaximumCodeBurstEarly -> NumberCodeBursts[color="black"];
+TotalPeopleInBurst -> NumberCodeBursts[color="black"];
+MaxChurnInBurst -> NumberOfDefects[color="black"];
+MaxChurnInBurst -> MaximumCodeBurstLate[color="black"];
+NumberCodeBursts -> pre[color="blue"];
+MaximumCodeBurstEarly -> MaxChurnInBurst[color="blue"];
+TotalPeopleInBurst -> MaximumCodeBurstLate[color="blue"];
+MaxChurnInBurst -> TotalPeopleInBurst[color="blue"];
 
   rankdir=LR
   node [shape=plaintext]

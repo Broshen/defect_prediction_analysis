@@ -1,12 +1,15 @@
 digraph {
-NumberOfChangesEarly -> NumberOfChanges[label="10",weight="10"];
-TotalPeopleInBurst -> NumberOfChangesEarly[label="10",weight="10"];
-TotalPeopleInBurst -> NumberOfChanges[label="10",weight="10"];
-TLOC -> NumberOfChangesEarly[label="10",weight="10"];
-pre -> NumberOfChangesEarly[label="10",weight="10"];
-pre -> NumberOfChanges[label="10",weight="10"];
-TotalPeopleInBurst -> MaximumCodeBurstLate[label="8",weight="8"];
-MaxChurnInBurst -> TLOC[label="7",weight="7"];
-MaxChurnInBurst -> pre[label="7",weight="7"];
-MaxChurnInBurst -> TotalPeopleInBurst[label="6",weight="6"];
+TotalBurstSizeEarly -> NumberOfDefects[label="10",weight="10"];
+TotalBurstSizeEarly -> MaxChurnInBurst[label="10",weight="10"];
+NumberConsecutiveChanges -> NumberOfDefects[label="10",weight="10"];
+TotalPeopleInBurst -> MaxChurnInBurst[label="9",weight="9"];
+TotalPeopleInBurst -> MaximumCodeBurstLate[label="9",weight="9"];
+TotalBurstSizeEarly -> MaximumCodeBurstLate[label="9",weight="9"];
+NumberConsecutiveChanges -> TotalBurstSizeEarly[label="9",weight="9"];
+NumberConsecutiveChanges -> MaxChurnInBurst[label="9",weight="9"];
+PeopleTotal -> TotalBurstSizeEarly[label="9",weight="9"];
+TotalPeopleInBurst -> TotalBurstSizeEarly[label="8",weight="8"];
+NumberConsecutiveChanges -> NumberOfChanges[label="7",weight="7"];
+NumberConsecutiveChanges -> PeopleTotal[label="7",weight="7"];
+NumberConsecutiveChanges -> TotalPeopleInBurst[label="6",weight="6"];
 }

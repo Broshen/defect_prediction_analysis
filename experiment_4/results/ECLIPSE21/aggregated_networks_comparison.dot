@@ -1,18 +1,27 @@
 digraph {
-NumberOfChangesEarly -> MaximumCodeBurstLate[label="10",weight="10", color="red"];
-pre -> MaximumCodeBurstLate[label="10",weight="10", color="red"];
-pre -> TotalBurstSizeLate[label="9",weight="9", color="red"];
-TimeLastBurst -> MaxChurnInBurst[label="9",weight="9", color="red"];
-TotalBurstSizeLate -> MaximumCodeBurstLate[label="9",weight="9", color="red"];
-TimeLastBurst -> TotalPeopleInBurst[label="8",weight="8", color="red"];
-NumberOfChangesEarly -> MaxChurnInBurst[label="7",weight="7", color="red"];
-pre -> MaxChurnInBurst[label="7",weight="7", color="red"];
-MaxChurnInBurst -> TotalPeopleInBurst[label="7",weight="7", color="red"];
-NumberOfChangesEarly -> TotalBurstSizeLate[label="6",weight="6", color="red"];
-pre -> NumberOfChangesEarly[label="6",weight="6", color="red"];
-pre -> TimeLastBurst[label="6",weight="6", color="red"];
-TimeLastBurst -> NumberOfChangesEarly[label="6",weight="6", color="red"];
-MaxChurnInBurst -> pre[label="-6",weight="-6", color="blue"];
+NumberOfChangesEarly -> MaximumCodeBurst[label="10",weight="10", color="red"];
+NumberOfChangesEarly -> NumberOfDefects[label="10",weight="10", color="red"];
+NumberOfChangesEarly -> TotalBurstSizeLate[label="10",weight="10", color="red"];
+NumberOfChangesEarly -> TimeLastBurst[label="10",weight="10", color="red"];
+NumberOfChangesEarly -> TimeFirstBurst[label="10",weight="10", color="red"];
+BurstSize -> MaximumCodeBurst[label="10",weight="10", color="red"];
+BurstSize -> TimeLastBurst[label="10",weight="10", color="red"];
+BurstSize -> TimeFirstBurst[label="10",weight="10", color="red"];
+TotalBurstSizeLate -> MaximumCodeBurstLate[label="10",weight="10", color="red"];
+TimeLastBurst -> MaximumCodeBurst[label="10",weight="10", color="red"];
+TimeLastBurst -> TotalBurstSizeLate[label="10",weight="10", color="red"];
+TimeFirstBurst -> NumberOfDefects[label="10",weight="10", color="red"];
+TimeFirstBurst -> TotalBurstSizeLate[label="10",weight="10", color="red"];
+TimeFirstBurst -> TimeLastBurst[label="10",weight="10", color="red"];
+PeopleTotal -> TimeFirstBurst[label="10",weight="10", color="red"];
+BurstSize -> MaximumCodeBurstLate[label="6",weight="6", color="red"];
+PeopleTotal -> MaximumCodeBurstLate[label="6",weight="6", color="red"];
+PeopleTotal -> NumberOfDefects[label="4",weight="4", color="red"];
+NumberOfChangesLate -> PeopleTotal[label="-6",weight="-6", color="blue"];
+MaximumCodeBurst -> NumberOfDefects[label="-6",weight="-6", color="blue"];
+TimeMaxBurst -> NumberOfChangesLate[label="-7",weight="-7", color="blue"];
+MaxChurnInBurst -> MaximumCodeBurst[label="-8",weight="-8", color="blue"];
+MaximumCodeBurst -> PeopleTotal[label="-10",weight="-10", color="blue"];
 
   rankdir=LR
   node [shape=plaintext]

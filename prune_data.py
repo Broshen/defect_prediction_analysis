@@ -6,22 +6,29 @@ OUTPUT_FOLDER = './preprocessing/pruned_discretized/weekly/classes/'
 
 
 COLUMNS_TO_KEEP = {
-"ECLIPSE20_GAP3-3_BURST3-3":
-	["NumberCodeBurstsLate","PeopleTotal","NumberOfDefects","TotalBurstSizeEarly","TLOC","MaxChurnInBurst","pre",],
-"ECLIPSE20_ALLGAPS_ALLBURSTS":
-	["NumberOfChangesLate","PeopleTotal","NumberOfDefects","GapSize","MaximumCodeBurstLate","TimeLastBurst","TimeFirstBurst","MaxChurnInBurst","pre","TLOC","MaximumCodeBurst","TotalPeopleInBurst",],
-"ECLIPSE21_GAP3-3_BURST3-3":
-	["TimeLastBurst","MaximumCodeBurstLate","PeopleTotal","NumberOfDefects","TotalPeopleInBurst","pre","MaxChurnInBurst",],
-"ECLIPSE21_ALLGAPS_ALLBURSTS":
-	["NumberOfChangesEarly","PeopleTotal","NumberOfDefects","pre","TotalPeopleInBurst","MaxChurnInBurst","TimeLastBurst","MaximumCodeBurstLate","TotalBurstSizeLate",],
-"ECLIPSE30_GAP3-3_BURST3-3":
-	["NumberOfChangesEarly","PeopleTotal","NumberOfDefects","TotalPeopleInBurst","MaximumCodeBurstLate","MaxChurnInBurst","TLOC","NumberOfChanges","pre",],
-"ECLIPSE30_ALLGAPS_ALLBURSTS":
-	["NumberConsecutiveChangesLate","PeopleTotal","NumberOfDefects","pre","GapSize","MaximumCodeBurstLate","TimeFirstBurst","TimeLastBurst","NumberCodeBursts","NumberOfChanges",],
-"ECLIPSE31_GAP3-3_BURST3-3":
-	["TimeLastBurst","PeopleTotal","bugs","MaxChurnInBurst","TotalBurstSizeEarly",],
-"ECLIPSE31_ALLGAPS_ALLBURSTS":
-	["NumberConsecutiveChangesLate","PeopleTotal","bugs","MaximumCodeBurstLate","TotalBurstSizeLate","MaxPeopleInBurst","TimeMaxBurst",],
+"ECLIPSE20_ALLGAPS_ALLBURSTS":	
+["NumberCodeBursts", "TLOC", "NumberOfDefects", "NumberOfChanges", "MaxChurnInBurst", "BurstSize", "TotalBurstSizeLate", "pre", "TimeFirstBurst", "NumberConsecutiveChanges", "MaximumCodeBurstLate", ]
+
+,"ECLIPSE20_GAP3-3_BURST3-3":
+["NumberCodeBursts", "NumberOfDefects", "NumberOfChanges", "MaximumCodeBurstEarly", "TotalPeopleInBurst", "NumberCodeBurstsEarly", "MaxChurnInBurst", "pre", "MaximumCodeBurstLate", "PeopleTotal", ]
+	
+,"ECLIPSE21_ALLGAPS_ALLBURSTS":
+["MaximumCodeBurst", "NumberOfDefects", "NumberOfChangesEarly", "BurstSize", "TotalBurstSizeLate", "TimeLastBurst", "TimeFirstBurst", "MaximumCodeBurstLate", "PeopleTotal", ]
+
+,"ECLIPSE21_GAP3-3_BURST3-3":
+["NumberOfChangesLate", "MaximumCodeBurst", "NumberOfDefects", "MaxChurnInBurst", "TimeMaxBurst", "MaximumCodeBurstLate", "PeopleTotal", ]
+
+,"ECLIPSE30_ALLGAPS_ALLBURSTS":
+["NumberOfDefects", "NumberOfChanges", "TotalBurstSizeEarly", "TotalBurstSizeLate", "TimeLastBurst", "TimeFirstBurst", "TotalChurnInBurst", "MaximumCodeBurstLate", "PeopleTotal", ]
+
+,"ECLIPSE30_GAP3-3_BURST3-3":
+["NumberOfDefects", "NumberOfChanges", "TotalPeopleInBurst", "TotalBurstSizeEarly", "MaxChurnInBurst", "NumberConsecutiveChanges", "MaximumCodeBurstLate", "PeopleTotal", ]
+
+,"ECLIPSE31_ALLGAPS_ALLBURSTS":
+["bugs", "MaximumCodeBurst", "NumberOfChanges", "MaxChurnInBurst", "BurstSize", "TimeMaxBurst", "NumberConsecutiveChanges", "MaximumCodeBurstLate", "PeopleTotal", ]
+
+,"ECLIPSE31_GAP3-3_BURST3-3":
+["bugs", "NumberOfChanges", "MaximumCodeBurstEarly", "MaxChurnInBurst", "TimeMaxBurst", ]
 }
 
 # expects a .csv filename, whose file has ; seperators

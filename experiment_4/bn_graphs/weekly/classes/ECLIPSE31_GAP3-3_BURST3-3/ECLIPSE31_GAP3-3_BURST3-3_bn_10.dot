@@ -1,10 +1,14 @@
 digraph {
-   TimeLastBurst;
-   PeopleTotal;
    bugs;
+   NumberOfChanges;
+   MaximumCodeBurstEarly;
    MaxChurnInBurst;
-   TotalBurstSizeEarly;
-   TimeLastBurst -> MaxChurnInBurst;
-   TimeLastBurst -> TotalBurstSizeEarly;
-   MaxChurnInBurst -> bugs;
+   TimeMaxBurst;
+   bugs -> NumberOfChanges;
+   bugs -> MaximumCodeBurstEarly;
+   bugs -> MaxChurnInBurst;
+   MaximumCodeBurstEarly -> MaxChurnInBurst;
+   MaximumCodeBurstEarly -> TimeMaxBurst;
+   MaxChurnInBurst -> TimeMaxBurst;
+   TimeMaxBurst -> NumberOfChanges;
 }

@@ -12,4 +12,4 @@ gobnilp/outputfile/dotavg = "dotavg"
 gobnilp/outputfile/scoreandtimeavg = "scoreandtimeavg"
 
 
-limits/time = 450
+limits/time = 600

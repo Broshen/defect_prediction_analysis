@@ -1,16 +1,21 @@
 digraph {
-NumberConsecutiveChangesLate -> pre[label="10",weight="10"];
-NumberConsecutiveChangesLate -> NumberCodeBursts[label="10",weight="10"];
-pre -> NumberCodeBursts[label="10",weight="10"];
-TimeLastBurst -> TimeFirstBurst[label="10",weight="10"];
-TimeLastBurst -> NumberCodeBursts[label="10",weight="10"];
-NumberOfChanges -> pre[label="10",weight="10"];
-NumberConsecutiveChangesLate -> TimeFirstBurst[label="9",weight="9"];
-TimeLastBurst -> pre[label="9",weight="9"];
-NumberOfChanges -> TimeFirstBurst[label="9",weight="9"];
-NumberConsecutiveChangesLate -> MaximumCodeBurstLate[label="6",weight="6"];
-GapSize -> MaximumCodeBurstLate[label="6",weight="6"];
-TimeLastBurst -> MaximumCodeBurstLate[label="6",weight="6"];
-NumberConsecutiveChangesLate -> GapSize[label="6",weight="6"];
-NumberConsecutiveChangesLate -> NumberOfChanges[label="6",weight="6"];
+NumberOfChanges -> NumberOfDefects[label="10",weight="10"];
+NumberOfChanges -> MaximumCodeBurstLate[label="10",weight="10"];
+TotalBurstSizeEarly -> MaximumCodeBurstLate[label="10",weight="10"];
+TotalBurstSizeLate -> TimeLastBurst[label="10",weight="10"];
+TotalBurstSizeLate -> MaximumCodeBurstLate[label="10",weight="10"];
+TimeLastBurst -> NumberOfChanges[label="10",weight="10"];
+TimeFirstBurst -> TimeLastBurst[label="10",weight="10"];
+TotalChurnInBurst -> NumberOfDefects[label="10",weight="10"];
+TotalChurnInBurst -> NumberOfChanges[label="10",weight="10"];
+TotalChurnInBurst -> TimeLastBurst[label="10",weight="10"];
+PeopleTotal -> NumberOfDefects[label="10",weight="10"];
+PeopleTotal -> NumberOfChanges[label="10",weight="10"];
+TotalBurstSizeLate -> PeopleTotal[label="9",weight="9"];
+TimeFirstBurst -> PeopleTotal[label="8",weight="8"];
+TotalBurstSizeLate -> TotalChurnInBurst[label="7",weight="7"];
+TimeFirstBurst -> TotalBurstSizeEarly[label="7",weight="7"];
+TimeFirstBurst -> TotalChurnInBurst[label="7",weight="7"];
+TotalChurnInBurst -> PeopleTotal[label="7",weight="7"];
+TotalBurstSizeLate -> TimeFirstBurst[label="6",weight="6"];
 }
