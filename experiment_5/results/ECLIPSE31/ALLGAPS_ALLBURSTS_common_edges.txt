@@ -1,0 +1,14 @@
+Format:
+Edge; Number of graphs this edge appears in
+PeopleTotal -> bugs; 6
+NumberOfChanges -> bugs; 6
+ChurnTotal -> PeopleTotal; 6
+NumberOfChanges -> PeopleTotal; 5
+NumberOfChanges -> ChurnTotal; 5
+bugs -> ChurnTotal; 5
+ChurnTotal -> bugs; 5
+PeopleTotal -> NumberOfChanges; 5
+ChurnTotal -> NumberOfChanges; 5
+PeopleTotal -> ChurnTotal; 4
+bugs -> PeopleTotal; 4
+bugs -> NumberOfChanges; 4

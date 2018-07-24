@@ -27,3 +27,8 @@ Folders:
 	1) compare the aggregated BNs between the MERGED and OPTIMAL datasets
 	2) compare the best BNs (i.e. bn_1.dot) between the MERGED and OPTIMAL datasets
 	3) compare the best BNs vs the aggregated BNs for each dataset
+
+/experiment_5 - generate the top 10 BNs taking only the variables: {"TLOC", "BurstSize", "GapSize", "pre", "PeopleTotal", "NumberOfChanges", "NumberOfDefects", "ChurnTotal"}. The goal of this is to that many variables are counting the same, or similar things (e.g. NumberOfChanges, NumberOfChangesEarly, NumberOfChangesLate, etc.), so by only taking one of these variables, we can try to simplify the dataset, and try to observe more concrete patterns that may appear throughout multiple datasets. In addition to generating the top 10 BNs, we also:
+	1) compare the aggregated BNs between the MERGED and OPTIMAL datasets
+	2) compare the best BNs (i.e. bn_1.dot) between the MERGED and OPTIMAL datasets
+	3) compare the best BNs vs the aggregated BNs for each dataset

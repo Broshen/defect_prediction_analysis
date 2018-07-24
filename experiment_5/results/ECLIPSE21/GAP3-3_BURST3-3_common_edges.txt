@@ -1,0 +1,17 @@
+Format:
+Edge; Number of graphs this edge appears in
+PeopleTotal -> pre; 10
+NumberOfChanges -> pre; 10
+TLOC -> pre; 10
+TLOC -> NumberOfDefects; 10
+pre -> NumberOfDefects; 10
+NumberOfChanges -> PeopleTotal; 7
+ChurnTotal -> PeopleTotal; 7
+NumberOfChanges -> TLOC; 7
+ChurnTotal -> TLOC; 7
+NumberOfChanges -> ChurnTotal; 5
+ChurnTotal -> NumberOfChanges; 5
+TLOC -> NumberOfChanges; 3
+TLOC -> ChurnTotal; 3
+PeopleTotal -> NumberOfChanges; 3
+PeopleTotal -> ChurnTotal; 3

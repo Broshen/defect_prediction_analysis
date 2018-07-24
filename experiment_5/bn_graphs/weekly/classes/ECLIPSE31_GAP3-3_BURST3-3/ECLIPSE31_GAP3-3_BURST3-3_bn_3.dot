@@ -1,0 +1,11 @@
+digraph {
+   PeopleTotal;
+   NumberOfChanges;
+   ChurnTotal;
+   bugs;
+   PeopleTotal -> NumberOfChanges;
+   PeopleTotal -> ChurnTotal;
+   PeopleTotal -> bugs;
+   ChurnTotal -> NumberOfChanges;
+   ChurnTotal -> bugs;
+}

@@ -1,0 +1,33 @@
+digraph {
+pre -> NumberOfChanges[label="10",weight="10", color="red"];
+TLOC -> PeopleTotal[label="8",weight="8", color="red"];
+ChurnTotal -> NumberOfDefects[label="7",weight="7", color="red"];
+TLOC -> pre[label="7",weight="7", color="red"];
+PeopleTotal -> NumberOfChanges[label="0",weight="0", color="black"];
+ChurnTotal -> NumberOfChanges[label="0",weight="0", color="black"];
+pre -> PeopleTotal[label="0",weight="0", color="black"];
+TLOC -> NumberOfDefects[label="0",weight="0", color="black"];
+TLOC -> ChurnTotal[label="0",weight="0", color="black"];
+pre -> ChurnTotal[label="-1",weight="-1", color="blue"];
+pre -> NumberOfDefects[label="-1",weight="-1", color="blue"];
+ChurnTotal -> PeopleTotal[label="-2",weight="-2", color="blue"];
+
+  rankdir=LR
+  node [shape=plaintext]
+  subgraph cluster_01 { 
+    label = "Legend";
+    key [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+      <tr><td align="right" port="i1">Appears more frequently in ALLGAPS_ALLBURSTS_aggregate_network.dot</td></tr>
+      <tr><td align="right" port="i2">Appears more frequently in GAP3-3_BURST3-3_aggregate_network.dot</td></tr>
+      <tr><td align="right" port="i3">Appears in both graphs</td></tr>
+      </table>>]
+    key2 [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+      <tr><td port="i1">&nbsp;</td></tr>
+      <tr><td port="i2">&nbsp;</td></tr>
+      <tr><td port="i3">&nbsp;</td></tr>
+      </table>>]
+    key:i1:e -> key2:i1:w [color=red]
+    key:i2:e -> key2:i2:w [color=blue]
+    key:i3:e -> key2:i3:w [color=black]
+  }
+}

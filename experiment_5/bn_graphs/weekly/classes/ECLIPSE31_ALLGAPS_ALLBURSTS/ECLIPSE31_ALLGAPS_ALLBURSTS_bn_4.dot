@@ -1,0 +1,14 @@
+digraph {
+   PeopleTotal;
+   NumberOfChanges;
+   ChurnTotal;
+   bugs;
+   BurstSize;
+   GapSize;
+   PeopleTotal -> NumberOfChanges;
+   PeopleTotal -> ChurnTotal;
+   PeopleTotal -> bugs;
+   ChurnTotal -> NumberOfChanges;
+   bugs -> NumberOfChanges;
+   bugs -> ChurnTotal;
+}

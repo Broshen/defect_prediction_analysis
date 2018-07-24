@@ -1,0 +1,11 @@
+digraph {
+PeopleTotal -> pre[label="10",weight="10"];
+NumberOfChanges -> pre[label="10",weight="10"];
+TLOC -> pre[label="10",weight="10"];
+TLOC -> NumberOfDefects[label="10",weight="10"];
+pre -> NumberOfDefects[label="10",weight="10"];
+NumberOfChanges -> PeopleTotal[label="7",weight="7"];
+ChurnTotal -> PeopleTotal[label="7",weight="7"];
+NumberOfChanges -> TLOC[label="7",weight="7"];
+ChurnTotal -> TLOC[label="7",weight="7"];
+}

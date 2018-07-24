@@ -1,0 +1,5 @@
+digraph {
+PeopleTotal -> bugs[label="6",weight="6"];
+NumberOfChanges -> bugs[label="6",weight="6"];
+ChurnTotal -> PeopleTotal[label="6",weight="6"];
+}

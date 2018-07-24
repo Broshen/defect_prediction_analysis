@@ -1,0 +1,15 @@
+gobnilp/nbns = 10
+gobnilp/outputfile/scores = "bn.scores"
+gobnilp/delimiter = "whitespace"
+gobnilp/scoring/names = TRUE
+gobnilp/scoring/arities = FALSE
+gobnilp/outputfile/dot = "bn.dot"
+gobnilp/outputfile/scoreandtime = "scoreandtime"
+
+
+gobnilp/outputfile/solutionavg = "solutionavg"
+gobnilp/outputfile/dotavg = "dotavg"
+gobnilp/outputfile/scoreandtimeavg = "scoreandtimeavg"
+
+
+limits/time = 450
