@@ -2,8 +2,8 @@ import pandas as pd
 import os
 import re
 
-INPUT_FOLDER = '../change_burst_data-master/weekly/classes/'
-OUTPUT_FOLDER = "./preprocessing/aggregated/weekly/classes/"
+INPUT_FOLDER = '../../change_burst_data-master/weekly/classes/'
+OUTPUT_FOLDER = "../preprocessing/aggregated/weekly/classes/"
 
 
 columns_to_keep = [

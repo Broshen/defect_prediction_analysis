@@ -1,8 +1,8 @@
 import pandas as pd
 import os
 
-INPUT_FOLDER = './preprocessing/discretized/weekly/classes/'
-OUTPUT_FOLDER = './preprocessing/simplified_discretized/weekly/classes/'
+INPUT_FOLDER = '../preprocessing/discretized/weekly/classes/'
+OUTPUT_FOLDER = '../preprocessing/simplified_discretized/weekly/classes/'
 
 
 COLUMNS_TO_KEEP = ["PeopleTotal", "NumberOfChanges", "ChurnTotal"]

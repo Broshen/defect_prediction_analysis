@@ -2,8 +2,8 @@ import pandas as pd
 import matplotlib
 import os
 
-INPUT_FOLDER = "./preprocessing/aggregated/weekly/classes/"
-OUTPUT_FOLDER = "./preprocessing/distributions/weekly/classes/"
+INPUT_FOLDER = "../preprocessing/aggregated/weekly/classes/"
+OUTPUT_FOLDER = "../preprocessing/distributions/weekly/classes/"
 
 COLUMNS_TO_HISTOGRAM = {
 	"MaxChurnInBurst",

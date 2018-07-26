@@ -3,7 +3,7 @@ import subprocess
 import sys
 import re
 
-INPUT_PATH = "./experiment_3/results/"
+INPUT_PATH = "../experiment_3/results/"
 
 # takes in a path P.dot to a dot file representing a weighted directed graph, 
 # and creates a undirected dot file and rendered jpg in the same

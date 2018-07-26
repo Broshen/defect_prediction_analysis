@@ -5,7 +5,7 @@ import re
 from collections import OrderedDict
 from operator import itemgetter  
 
-GRAPHVIZ_DOT_EXECUTABLE_PATH="../graphviz-2.38/release/bin/dot.exe"
+GRAPHVIZ_DOT_EXECUTABLE_PATH="../../graphviz-2.38/release/bin/dot.exe"
 EDGE_MAP = {}
 
 # takes in a path P.dot to a dot file representing a weighted directed graph, 

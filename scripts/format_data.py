@@ -1,8 +1,8 @@
 import pandas as pd
 import os
 
-INPUT_FOLDER = './preprocessing/aggregated/weekly/classes/'
-OUTPUT_FOLDER = './preprocessing/discretized/weekly/classes/'
+INPUT_FOLDER = '../preprocessing/aggregated/weekly/classes/'
+OUTPUT_FOLDER = '../preprocessing/discretized/weekly/classes/'
 
 BINS = {
 	'bugs': [-1,0,10],
